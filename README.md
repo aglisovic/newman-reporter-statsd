@@ -24,14 +24,24 @@ Install with npm
 npm install -g newman-reporter-statsd
 ```
 
-The `-r statsd` is the flag to enable StatsD reporting.
+### Usage
 
-The `--reporter-statsd-destination` is the destination ip address.
+- The `-r statsd` is the flag to enable StatsD reporting.
 
-The `--reporter-statsd-port` is the destination port.
+- The `--reporter-statsd-destination <ip-address>` is the flag to set destination ip address.
+
+- The `--reporter-statsd-port <port-number>` is the flag to set destination port.
 
 ```
 newman run <collection-url> -r statsd --reporter-statsd-destination <ip-address> --reporter-statsd-port <port-number>
 ```
 
-The output will be sent to statsd via UDP.
+Optional:
+
+- The `-e <environment-url>` is the flag to optionaly add environment.
+
+Note:
+
+- Flags `<collection-url` and `<environment-url>` could be path to *.json files exported from Postman App in your file system or url to public Collection.
+
+The output will be sent to StatsD via UDP.
